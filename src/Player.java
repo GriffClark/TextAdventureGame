@@ -23,9 +23,10 @@ public class Player {
 		return alive;
 	}
 	
-	public void displayStats() {
+	public String displayStats() {
 		
-		System.out.println("Your stats are as follows:\nYour current health ~ " + h +"\nYour current attack ~ " + a + "\nYour are a(n)" + race + "\n You current have " +gold+"\nYour total damage is~ " + totalDamage);
+		return "Your stats are as follows:\nYour current health ~ " + h +"\nYour current attack ~ " + a + "\nYour are a(n)" + race + 
+				"\n You current have " +gold+"\nYour total damage is~ " + totalDamage;
 	}
 
 		
