@@ -31,14 +31,15 @@ public class Game {
 		
 		while (true){
 			
-		if (userInput.equals ("help")) {
-				System.out.println("'display stats' or 'restart'");
+			if (userInput.equals ("help")) {
+				System.out.println("'disp' or 'restart'");
 				userInput = keyboard.next();
 			}	
 			
-			else if (userInput.equals("display stats")) {
+			else if (userInput.equals("disp")) {
 				System.out.println (player.displayStats());
-				System.out.println ("\n please type the last game command that you used in order to return to the game");
+				System.out.println ("\nPlease type the last game command that you used in order to return to the game");
+				userInput = keyboard.next();
 			}
 		
 			else if (userInput.equals ("start") || userInput.equals("restart")) { 
@@ -51,8 +52,10 @@ public class Game {
 		
 			else if (userInput.equals ("human")) {
 				player.setHumanStats();	
-				System.out.println("you have chosen to be a humun. \n If you wouold like to choose another class, type 'restart. Else, type 'continue'");
+				System.out.println("you have chosen to be a humun. \nIf you wouold like to choose another class, type 'restart. Else, type 'continue'");
 				userInput = keyboard.next(); 
+		
+				
 			} // ends human
 	
 			else if (userInput.equals ("dwarf")) {
@@ -87,7 +90,7 @@ public class Game {
 				userInput = keyboard.next();
 			}//ends land
 		
-			else if (userInput.equals  ("keep going")) {
+			else if (userInput.equals  ("kg")) {
 				System.out.println ("Your ship keeps going. As the sun begins to set, you see a ship with black sails not that far away. The captian tells the men to find weapons and arm themselves.");
 				System.out.  println("You are given a sword!");
 				sword.getNewSword();
@@ -101,11 +104,16 @@ public class Game {
 				System.out.println("You beach your little boat and begin to explore the island. Suddenly, you hear a roar from farther up the island. \nDo you tell your men to 'return to ship' or 'ignore it' or 'go towards it'?");
 				userInput = keyboard.next();
 			
-		}//ends stop
+			}//ends stop
 		
-		if (userInput.equals ("ignore it")) {
-			System.out.println("You continue onwards when suddenly a giant bear leaps out of the brush at you. lt mauls one of the men with you to death. The rest of your men run. Do you 'run with them' or 'fight the bear'");
-		}//ends ignore it 
+			else if (userInput.equals ("ignore it")) {
+			System.out.println("You continue onwards when suddenly a giant bear leaps out of the brush at you. lt mauls one of the men with you to death. The rest of your men run. \nDo you 'run with them' or 'fight the bear'");
+			}//ends ignore it 
+		
+			else if (player.isAlive != true) {
+				System.out.println("You have died. That really sucks. Sorry.");
+				break;
+			}
 		
 //		if (s.equals("fight the bear")) {
 //			Bear enemyBear = new Bear (40,4);
@@ -115,14 +123,13 @@ public class Game {
 			 */
 		}
 		
-		}
+	}
 		/*
 		 * change to else-if with else statement invalad command
 		 */
 		
-	}
-//		System.out.println("You have died. Sorry. That sucks. Better luck next time.");
-		// now how do I give you an option to loop back to the start?
+}
+
 	
 
 // how do I make it so that players can't just skip ahead if they have played the game before, or re-make decisions? In other words, how do I make it so that the game can only move forwards?

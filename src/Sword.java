@@ -25,7 +25,7 @@ public class Sword{
 	public void setHealthBonus(int healthBonus) {
 		this.healthBonus = 0;
 	}
-	public int getAttackBonus(int attackBonus) { //this pulls attack bonus, assigns it a random number 1-7, and then spits it back out. 
+	public int getAttackBonus() { //this pulls attack bonus, assigns it a random number 1-7, and then spits it back out. 
 		this.attackBonus = attackBonus;
 		attackBonus =((int) Math.random()) * 7;
 		return attackBonus;

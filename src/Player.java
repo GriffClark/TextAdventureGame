@@ -5,7 +5,7 @@ public class Player {
 	 
 	private ArrayList<Item> items = new ArrayList<Item>();
 	private int h;
-	private int a;
+	private int baseA;
 	private String race;
 	private int gold = 0;
 	public boolean isAlive = true;
@@ -25,20 +25,20 @@ public class Player {
 	
 	public String displayStats() {
 		
-		return "Your stats are as follows:\nYour current health ~ " + h +"\nYour current attack ~ " + a + "\nYour are a(n)" + race + 
-				"\n You current have " +gold+"\nYour total damage is~ " + totalDamage;
+		return "Your stats are as follows:\nYour current health ~ " + h +"\nYour current attack ~ " + totalDamage() + "\nYour are a ~ " + race + 
+				"\nYou current have ~ " +gold + " gold";
 	}
 
 		
 
 		
 	public int totalDamage() { // returns the total damage a player can do
-		int total = a;
+		int total = this.baseA;
 		for (int i = 0; i < items.size(); i++) {
 			total += items.get(i).getAttackBonus(); //calls the getAttackBonus() for each item 
 		}
 		
-		
+		this.totalDamage = total;
 		return total;
 		//this sets the total damage by starting with base a and adding the bonus of each item
 	}
@@ -65,7 +65,7 @@ public class Player {
 		// TODO Auto-generated method stub
 		this.hasRace = true;
 		this.h = 20;
-		this.a = 20;
+		this.baseA = 20;
 		this.gold= 3;
 		this.race = "Elf";
 		System.out.println(race + " successfully generated!");
@@ -76,7 +76,7 @@ public class Player {
 		
 	this.hasRace = true;
 	this.h = 15;
-	this.a = 22;
+	this.baseA = 22;
 	this.gold= 7;
 	this.race = "Human";
 	System.out.println(race +" successfully generated!");
@@ -87,7 +87,7 @@ public class Player {
 		
 	this.hasRace = true;
 	this.h = 30;
-	this.a = 12;
+	this.baseA = 12;
 	this.gold= 13;
 	this.race = "Dwarf";
 	System.out.println(race +" successfully generated!");
