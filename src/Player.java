@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 public class Player {
 	 
-	private ArrayList<Item> items = new ArrayList<Item>();
+	public static ArrayList<Item> items = new ArrayList<Item>();
 	private int h;
 	private int baseA;
 	private String race;
 	private int gold = 0;
-	public boolean isAlive = true;
+	public static boolean isAlive = true;
 	private boolean hasRace = false;
 	private int totalDamage;
 	

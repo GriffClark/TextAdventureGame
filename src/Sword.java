@@ -33,10 +33,10 @@ public class Sword{
 	
 public void getNewSword() {
 	this.getAttackBonus(attackBonus); 
-	
 	this.setName(name);
-	
 	this.setHealthBonus(healthBonus);
+	Player.items.add(Sword);
+	//how do I add the sword to the items<> of the player??
 	
 	
 }
